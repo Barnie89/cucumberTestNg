@@ -1,0 +1,172 @@
+[
+  {
+    "line": 20,
+    "elements": [
+      {
+        "start_timestamp": "2022-11-28T14:12:11.771Z",
+        "before": [
+          {
+            "result": {
+              "duration": 9973800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "parallelTest.hooks.readFile()"
+            }
+          },
+          {
+            "result": {
+              "duration": 2242676800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "parallelTest.hooks.setUpBrowser()"
+            }
+          }
+        ],
+        "line": 24,
+        "name": "Title of your scenario",
+        "description": "",
+        "id": "title-of-your-feature;title-of-your-scenario",
+        "after": [
+          {
+            "result": {
+              "duration": 1994300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "parallelTest.hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 140622000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "parallelTest.hooks.quitBrowser()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3987593800,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "User is on FirstPage",
+            "match": {
+              "location": "parallelTest.FirstPageSteps.loginTests()"
+            },
+            "keyword": "Given "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@tag1"
+          }
+        ]
+      }
+    ],
+    "name": "Title of your feature",
+    "description": "  I want to use this template for my feature file",
+    "id": "title-of-your-feature",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/parallelTest/firstPage.feature",
+    "tags": []
+  },
+  {
+    "line": 20,
+    "elements": [
+      {
+        "start_timestamp": "2022-11-28T14:12:11.769Z",
+        "before": [
+          {
+            "result": {
+              "duration": 8976200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "parallelTest.hooks.readFile()"
+            }
+          },
+          {
+            "result": {
+              "duration": 2229722600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "parallelTest.hooks.setUpBrowser()"
+            }
+          }
+        ],
+        "line": 24,
+        "name": "Title of your scenario",
+        "description": "",
+        "id": "title-of-your-feature;title-of-your-scenario",
+        "after": [
+          {
+            "result": {
+              "duration": 2002800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "parallelTest.hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 233590500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "parallelTest.hooks.quitBrowser()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4983961700,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "User is on Loginpage",
+            "match": {
+              "location": "parallelTest.LoginPageSteps.loginTest()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4202978300,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "Click on About",
+            "match": {
+              "location": "parallelTest.LoginPageSteps.clickAbout()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@tag1"
+          }
+        ]
+      }
+    ],
+    "name": "Title of your feature",
+    "description": "  I want to use this template for my feature file",
+    "id": "title-of-your-feature",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/parallelTest/loginPage.feature",
+    "tags": []
+  }
+]

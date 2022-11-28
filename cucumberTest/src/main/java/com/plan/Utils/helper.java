@@ -11,61 +11,66 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.SessionId;
+import org.openqa.selenium.safari.SafariDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class helper {
 	
-	public static WebDriver driver=null;
-	public  SessionId session=null;
+	public WebDriver driver;
 	public static Properties prop = new Properties();
 	
-	 public static WebDriver getDriver() {
-         return driver;              
-     }
+//	 public static WebDriver getDriver() {
+//         return driver;              
+//     }
+//	 
+	
 	 
-	 public static void openPage(String url) {
-         driver.get(url);
-     }
+	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>(); 
 	 
-	public static void setUpDriver(){
-        String browser = prop.getProperty("BROWSER");
-        if (browser == null) {
-            browser = "chrome";
-        }
-        switch (browser) {
-            case "chrome":
-                WebDriverManager.chromedriver().setup();
-                ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.addArguments("start-maximized");
-            	   //session = ((ChromeDriver)driver).getSessionId();
-                driver = new ChromeDriver(chromeOptions);
-                break;
-            case "firefox":
-            	System.setProperty("webdriver.gecko.driver","./src/test/lib/geckodriver.exe");
-                driver = new FirefoxDriver();
-                driver.manage().window().maximize();
-                 //session = ((FirefoxDriver)driver).getSessionId();
-                break;
-            default:
-                throw new IllegalArgumentException("Browser \"" + browser + "\" isn't supported.");
-        }
-    }
+	public WebDriver setUpDriver(){
+		 String browser = prop.getProperty("BROWSER");
+		System.out.println("browser value is: " + browser);
+
+		if (browser.equals("chrome")) {
+			WebDriverManager.chromedriver().setup();
+						tlDriver.set(new ChromeDriver());
+		} else if (browser.equals("firefox")) {
+			WebDriverManager.firefoxdriver().setup();
+			tlDriver.set(new FirefoxDriver());
+		} else if (browser.equals("safari")) {
+			tlDriver.set(new SafariDriver());
+		} else {
+			System.out.println("Please pass the correct browser value: " + browser);
+		}
+
+		getDriver().manage().deleteAllCookies();
+		getDriver().manage().window().maximize();
+		return getDriver();
+
+	}
+
+	/**
+	 * this is used to get the driver with ThreadLocal
+	 * 
+	 * @return
+	 */
+	public static synchronized WebDriver getDriver() {
+		
+			return  tlDriver.get();	
+		
+		
+		
+	}
+
 	
 	
-	public static void ReadConfigData() throws InvalidPropertiesFormatException, IOException {
+	public void ReadConfigData() throws InvalidPropertiesFormatException, IOException {
 		File file=new File((System.getProperty("user.dir").toString().replace("\\", "\\\\")+"\\src\\test\\resources\\Environment\\"+"configuration.xml"));
 		FileInputStream fileInput=new FileInputStream(file);
 		prop.loadFromXML(fileInput);
 		fileInput.close();	
 		
 	}
-	  public static void tearDown() {
-          
-          if(driver!=null) {
-               driver.close();
-               driver.quit();
-          }
-	  }
-
+	
 }

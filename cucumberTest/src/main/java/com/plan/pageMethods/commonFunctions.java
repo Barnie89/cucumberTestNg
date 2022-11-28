@@ -3,16 +3,24 @@ package com.plan.pageMethods;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import com.plan.Utils.helper;
+import com.plan.pageLocators.loginPage;
 
-public class commonFunctions {
+public class commonFunctions  {
 	
 	public static Properties prop = new Properties();	
 	
+	 //static WebDriver driver= helper.getDriver();
 	public static void clickElement(String objName) throws Exception
 	{
 		getElementWithLocator(objName).click();
+	}
+	
+	public static void getUrl(String objName) throws Exception
+	{
+		helper.getDriver().get(objName);
 	}
 
 	
@@ -56,7 +64,7 @@ public class commonFunctions {
 			
 		}
 		
-		element=helper.driver.findElement(searchBy);	
+		element=helper.getDriver().findElement(searchBy);	
 		
 		return element;	
 		}
