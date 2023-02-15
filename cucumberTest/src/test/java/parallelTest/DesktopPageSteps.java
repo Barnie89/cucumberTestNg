@@ -17,7 +17,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DesktopPageSteps {
 	
-	private desktopPage desktop = new desktopPage(helper.getDriver());
+	private desktopPage desktop = new desktopPage(helper.getDesktopDriver());
     @Given("User is on Calculatorapp")
     public void calculatorApp() throws Exception {   
     	

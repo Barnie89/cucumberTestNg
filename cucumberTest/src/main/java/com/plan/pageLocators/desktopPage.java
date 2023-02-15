@@ -21,7 +21,7 @@ public class desktopPage {
 
 	
 	// 2. Constructor of the page class:
-	public desktopPage(WebDriver driver) {
+	public desktopPage(WindowsDriver<?> driver) {
 	}
 	
 	public void calculatorTest() throws Exception {   
