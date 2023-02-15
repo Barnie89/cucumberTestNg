@@ -3,6 +3,7 @@
 
 <properties>
 <entry key="BROWSER">chrome</entry>
+<entry key="TESTING">desktop</entry>
 <entry key="ENVIRONMENT">Env1</entry>
 
 

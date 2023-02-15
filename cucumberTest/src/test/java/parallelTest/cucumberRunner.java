@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
 		plugin = { "pretty", 
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}, 
-		tags="@tag1",
+		tags="@tag2",
 		monochrome = true,
 		glue = { "parallelTest" },
 		features = { "src/test/resources/parallelTest" }
@@ -16,7 +16,7 @@ import io.cucumber.testng.CucumberOptions;
 
 public class cucumberRunner extends AbstractTestNGCucumberTests {
 	@Override
-	@DataProvider(parallel = true)
+	@DataProvider(parallel = false)
 	public Object[][] scenarios() {
 		return super.scenarios();
 	}
