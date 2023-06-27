@@ -2,8 +2,8 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 
 <properties>
-<entry key="BROWSER">chrome</entry>
-<entry key="TESTING">desktop</entry>
+<entry key="BROWSER">edge</entry>
+<entry key="TESTING">singlebrowser</entry>
 <entry key="ENVIRONMENT">Env1</entry>
 
 

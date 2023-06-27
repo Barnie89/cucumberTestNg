@@ -11,8 +11,10 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.SessionId;
 import org.openqa.selenium.safari.SafariDriver;
 
@@ -32,11 +34,15 @@ public class helper {
 	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
 	public static ThreadLocal<WindowsDriver> tlwinDriver = new ThreadLocal<>();
 	public static WindowsDriver wdriver;
+	public static DesiredCapabilities capability = new DesiredCapabilities();
+    public static String remote_url = "http://localhost:4444/wd/hub";
+
+	
 
 	public static String appPath = "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App";
 
-	public WebDriver setUpDriver() {
-		String browser = prop.getProperty("BROWSER");
+	public WebDriver setUpDriver(String browser) {
+		//String browser = prop.getProperty("BROWSER");
 		System.out.println("browser value is: " + browser);
 
 		if (browser.equals("chrome")) {
@@ -47,6 +53,32 @@ public class helper {
 			tlDriver.set(new FirefoxDriver());
 		} else if (browser.equals("safari")) {
 			tlDriver.set(new SafariDriver());
+		}
+		else if (browser.equals("edge")) {
+			WebDriverManager.edgedriver().setup();
+			tlDriver.set(new EdgeDriver());
+		} else {
+			System.out.println("Please pass the correct browser value: " + browser);
+		}
+
+		getDriver().manage().deleteAllCookies();
+		getDriver().manage().window().maximize();
+		return getDriver();
+
+	}
+	
+	public WebDriver setupRemoteDriver() throws MalformedURLException {
+		String browser = prop.getProperty("BROWSER");
+		System.out.println("browser value is: " + browser);
+
+		if (browser.equals("chrome")) {
+			capability.chrome();
+			capability.setCapability("version","");
+     		tlDriver.set(new RemoteWebDriver(new URL(remote_url),capability));
+		} else if (browser.equals("firefox")) {
+			capability.firefox();
+			capability.setCapability("version","");
+			tlDriver.set(new RemoteWebDriver(new URL(remote_url),capability));
 		} else {
 			System.out.println("Please pass the correct browser value: " + browser);
 		}
@@ -58,7 +90,6 @@ public class helper {
 	}
 
 	public static WindowsDriver<?> desktopApp() throws MalformedURLException {
-		DesiredCapabilities capability = new DesiredCapabilities();
 
 		capability.setCapability("ms:experimental-webdriver", true);
 		capability.setCapability("app", appPath);
