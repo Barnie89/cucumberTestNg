@@ -1,23 +1,21 @@
 package com.plan.Utils;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.InvalidPropertiesFormatException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeDriverService;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.remote.SessionId;
 import org.openqa.selenium.safari.SafariDriver;
-
 import io.appium.java_client.windows.WindowsDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -36,20 +34,19 @@ public class helper {
 	public static WindowsDriver wdriver;
 	public static DesiredCapabilities capability = new DesiredCapabilities();
     public static String remote_url = "http://localhost:4444/wd/hub";
-
-	
-
+    public static ChromeOptions chromeopt= new ChromeOptions();
+    public static EdgeOptions edgeopt = new EdgeOptions();
 	public static String appPath = "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App";
 
 	public WebDriver setUpDriver(String browser) {
 		//String browser = prop.getProperty("BROWSER");
 		System.out.println("browser value is: " + browser);
-
 		if (browser.equals("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			tlDriver.set(new ChromeDriver());
+			chromeopt.addArguments("--remote-allow-origins*");
+			tlDriver.set(new ChromeDriver(chromeopt));
 		} else if (browser.equals("firefox")) {
-			WebDriverManager.firefoxdriver().setup();
+			WebDriverManager.firefoxdriver().driverVersion("0.30.0").setup();
 			tlDriver.set(new FirefoxDriver());
 		} else if (browser.equals("safari")) {
 			tlDriver.set(new SafariDriver());
@@ -67,19 +64,24 @@ public class helper {
 
 	}
 	
-	public WebDriver setupRemoteDriver() throws MalformedURLException {
-		String browser = prop.getProperty("BROWSER");
+	public WebDriver setupRemoteDriver(String browser) throws MalformedURLException {
+		
 		System.out.println("browser value is: " + browser);
 
 		if (browser.equals("chrome")) {
-			capability.chrome();
+			DesiredCapabilities dc = DesiredCapabilities.chrome();			
 			capability.setCapability("version","");
-     		tlDriver.set(new RemoteWebDriver(new URL(remote_url),capability));
+     		tlDriver.set(new RemoteWebDriver(new URL(remote_url),dc));
 		} else if (browser.equals("firefox")) {
-			capability.firefox();
+			DesiredCapabilities dc = DesiredCapabilities.firefox();
 			capability.setCapability("version","");
-			tlDriver.set(new RemoteWebDriver(new URL(remote_url),capability));
-		} else {
+			tlDriver.set(new RemoteWebDriver(new URL(remote_url),dc));
+		}
+		else if (browser.equals("edge")) {
+			DesiredCapabilities dc = DesiredCapabilities.edge();
+			capability.setCapability("version","");
+			tlDriver.set(new RemoteWebDriver(new URL(remote_url),dc));
+		}else {
 			System.out.println("Please pass the correct browser value: " + browser);
 		}
 

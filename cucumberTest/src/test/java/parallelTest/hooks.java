@@ -41,7 +41,11 @@ public class hooks {
 		} else if (prop.getProperty("TESTING").equalsIgnoreCase("desktop")) {
 			driver1 = helper.desktopApp();
 		} else if (prop.getProperty("TESTING").equalsIgnoreCase("remote")) {
-			driver = hl.setupRemoteDriver();
+			String browser= crossBrowserRunner.BROWSER.get();
+			driver = hl.setupRemoteDriver(browser);
+		}else if (prop.getProperty("TESTING").equalsIgnoreCase("crossbrowser")) {
+//			String browser= crossBrowserRunner.BROWSER.get();
+//			driver = hl.setUpDriver(browser);
 		}
 
 	}
@@ -52,11 +56,11 @@ public class hooks {
 
 			if (driver != null)
 				driver.close();
-			driver.quit();
+			//driver.quit();
 		} else if (prop.getProperty("TESTING").equalsIgnoreCase("desktop")) {
 			if (driver1 != null)
 				driver1.close();
-			driver1.quit();
+			//driver1.quit();
 			helper.stop();
 		}
 
