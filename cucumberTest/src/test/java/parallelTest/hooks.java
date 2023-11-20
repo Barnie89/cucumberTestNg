@@ -33,7 +33,7 @@ public class hooks {
 	}
 
 	@Before(order = 1)
-	public void setUpBrowser() throws InvalidPropertiesFormatException, IOException {
+	public void setUpBrowser() throws InvalidPropertiesFormatException, IOException, InterruptedException {
 
 		if (prop.getProperty("TESTING").equalsIgnoreCase("singlebrowser")) {
 			String browser = prop.getProperty("BROWSER");
@@ -41,10 +41,12 @@ public class hooks {
 		} else if (prop.getProperty("TESTING").equalsIgnoreCase("desktop")) {
 			driver1 = helper.desktopApp();
 		} else if (prop.getProperty("TESTING").equalsIgnoreCase("remote")) {
-			//String browser= crossBrowserRunner.BROWSER.get();
-			String browser = prop.getProperty("BROWSER");
+			String browser= crossBrowserRunner.BROWSER.get();
+			Runtime.getRuntime().exec("cmd /c start start_dockerGrid.bat");
+			Thread.sleep(15000);
+			//String browser = prop.getProperty("BROWSER");
 			driver = hl.setupRemoteDriver(browser);
-		}else if (prop.getProperty("TESTING").equalsIgnoreCase("crossbrowser")) {
+		} else if (prop.getProperty("TESTING").equalsIgnoreCase("crossbrowser")) {
 //			String browser= crossBrowserRunner.BROWSER.get();
 //			driver = hl.setUpDriver(browser);
 		}
@@ -52,17 +54,24 @@ public class hooks {
 	}
 
 	@After(order = 0)
-	public void quitBrowser() {
+	public void quitBrowser() throws IOException, InterruptedException {
 		if (prop.getProperty("TESTING").equalsIgnoreCase("singlebrowser")) {
 
 			if (driver != null)
 				driver.close();
-			//driver.quit();
+			// driver.quit();
 		} else if (prop.getProperty("TESTING").equalsIgnoreCase("desktop")) {
 			if (driver1 != null)
 				driver1.close();
-			//driver1.quit();
+			// driver1.quit();
 			helper.stop();
+		} else if (prop.getProperty("TESTING").equalsIgnoreCase("remote")) {
+			Runtime.getRuntime().exec("cmd /c start stop_dockerGrid.bat");
+			Thread.sleep(5000);
+			if (driver != null)
+				driver.close();
+			Runtime.getRuntime().exec("taskkill /f /im cmd.exe");
+
 		}
 
 	}

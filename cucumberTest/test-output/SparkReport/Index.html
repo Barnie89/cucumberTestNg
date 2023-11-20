@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Nov 20, 2023 08:18:18 PM</span></a>
+<a href="#"><span class="badge badge-primary">Nov 20, 2023 11:17:04 PM</span></a>
 </li>
 </ul>
 </div>
@@ -71,13 +71,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Nov 20, 2023 08:18:18 PM</h3>
+<h3>Nov 20, 2023 11:17:04 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Nov 20, 2023 08:18:28 PM</h3>
+<h3>Nov 20, 2023 11:18:50 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -130,7 +130,7 @@
 <div class="card-footer">
 <div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='100%'><b>2</b> scenarios failed,
+<small data-tooltip='100%'><b>4</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -148,10 +148,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='0%'><b>0</b> steps passed</small></div>
+<div><small data-tooltip='16%'><b>2</b> steps passed</small></div>
 <div>
-<small data-tooltip='57%'><b>4</b> steps failed,
-<b>3</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='50%'><b>6</b> steps failed,
+<b>4</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -167,7 +167,7 @@
 </div></div>
 <script>
 var timeline = {
-"Title of your feature":9.284
+"Title of your feature":104.404
 };
 </script>
 <div class="row">
@@ -179,7 +179,7 @@ var timeline = {
 <tr>
 <td>@tag1</td>
 <td>0</td>
-<td>2</td>
+<td>4</td>
 <td>0</td>
 <td>0</td>
 <td>0%</td>
@@ -225,15 +225,15 @@ warningParent: 0,
 skipParent: 0,
 childCount: 5,
 passChild: 0,
-failChild: 2,
+failChild: 4,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 0,
-failGrandChild: 4,
+passGrandChild: 2,
+failGrandChild: 6,
 warningGrandChild: 0,
-skipGrandChild: 3,
+skipGrandChild: 4,
 infoGrandChild: 0,
 eventsCount: 5,
 };
@@ -268,7 +268,7 @@ eventsCount: 5,
           <div class="test-detail">
             <p class="name">Title of your feature</p>
             <p class="text-sm">
-              <span>20:18:19 PM</span> / <span>00:00:09:284</span>
+              <span>23:17:05 PM</span> / <span>00:01:44:404</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -277,9 +277,9 @@ eventsCount: 5,
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-fail">Title of your feature</h5>
-<span class='badge badge-success'>11.20.2023 20:18:19</span>
-<span class='badge badge-danger'>11.20.2023 20:18:28</span>
-<span class='badge badge-default'>00:00:09:284</span>
+<span class='badge badge-success'>11.20.2023 23:17:05</span>
+<span class='badge badge-danger'>11.20.2023 23:18:50</span>
+<span class='badge badge-default'>00:01:44:404</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 </div>
 <div class="m-t-10 m-l-5"> I want to use this template for my feature file</div>
@@ -294,82 +294,36 @@ eventsCount: 5,
     </div>
         <div class="">
           <div class="card-body">
-              <div class="step fail-bg" title="BEFORE">
-                <span>parallelTest.hooks.setUpBrowser()</span>
+              <div class="step pass-bg" title="parallelTest.FirstPageSteps.loginTests()">
+                <span>Given User is on FirstPage</span>
       <div>
-        <textarea disabled class="code-block">org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 114
-Current browser version is 119.0.6045.160 with binary path C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+      </div>
+              </div>
+              <div class="step fail-bg" title="AFTER">
+                <span>parallelTest.hooks.quitBrowser()</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchSessionException: Unable to execute request for an existing session: Unable to find session with ID: e61395d9-f8d7-4be3-9038-ccdde50584c1
+Build info: version: '4.9.1', revision: 'eb2032df7f'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.16.3-microsoft-standard-WSL2', java.version: '11.0.18'
+Driver info: driver.version: unknown
 Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'LAPTOP-MHS7RQK4', ip: '172.20.112.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
-Driver info: driver.version: ChromeDriver
-remote stacktrace: Backtrace:
-	GetHandleVerifier [0x0052A813+48355]
-	(No symbol) [0x004BC4B1]
-	(No symbol) [0x003C5358]
-	(No symbol) [0x003E61AC]
-	(No symbol) [0x003E1EF3]
-	(No symbol) [0x003E0579]
-	(No symbol) [0x00410C55]
-	(No symbol) [0x0041093C]
-	(No symbol) [0x0040A536]
-	(No symbol) [0x003E82DC]
-	(No symbol) [0x003E93DD]
-	GetHandleVerifier [0x0078AABD+2539405]
-	GetHandleVerifier [0x007CA78F+2800735]
-	GetHandleVerifier [0x007C456C+2775612]
-	GetHandleVerifier [0x005B51E0+616112]
-	(No symbol) [0x004C5F8C]
-	(No symbol) [0x004C2328]
-	(No symbol) [0x004C240B]
-	(No symbol) [0x004B4FF7]
-	BaseThreadInitThunk [0x75DBFCC9+25]
-	RtlGetAppContainerNamedObjectPath [0x778A7C6E+286]
-	RtlGetAppContainerNamedObjectPath [0x778A7C3E+238]
-
+System info: host: 'LAPTOP-MHS7RQK4', ip: '192.168.99.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{moz:geckodriverVersion=0.33.0, timeouts={implicit=0, pageLoad=300000, script=30000}, moz:headless=false, platform=LINUX, se:bidi=ws://172.21.0.5:4444/session/e61395d9-f8d7-4be3-9038-ccdde50584c1/se/bidi, se:vncLocalAddress=ws://172.21.0.5:7900, acceptInsecureCerts=true, browserVersion=116.0, moz:processID=150, browserName=firefox, javascriptEnabled=true, platformName=LINUX, se:vncEnabled=true, setWindowRect=true, moz:profile=/tmp/rust_mozprofileulTTk9, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, se:vnc=ws://172.21.0.5:4444/session/e61395d9-f8d7-4be3-9038-ccdde50584c1/se/vnc, moz:windowless=false, se:cdp=ws://172.21.0.5:4444/session/e61395d9-f8d7-4be3-9038-ccdde50584c1/se/cdp, proxy=Proxy(), moz:accessibilityChecks=false, moz:shutdownTimeout=60000, se:noVncPort=7900, moz:buildID=20230628215308, moz:platformVersion=5.10.16.3-microsoft-standard-WSL2, moz:webdriverClick=true}]
+Session ID: e61395d9-f8d7-4be3-9038-ccdde50584c1
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$new$0(W3CHandshakeResponse.java:57)
-	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$getResponseFunction$2(W3CHandshakeResponse.java:104)
-	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$24(ProtocolHandshake.java:359)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
-	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
-	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:362)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:255)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
-	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:138)
-	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:178)
-	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:167)
-	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:156)
-	at com.plan.Utils.helper.setUpDriver(helper.java:47)
-	at parallelTest.hooks.setUpBrowser(hooks.java:40)
-</textarea>
-      
-      </div>
-              </div>
-              <div class="step skip-bg" title="parallelTest.FirstPageSteps.loginTests()">
-                <span>Given User is on FirstPage</span>
-      <div>Step skipped
-      </div>
-              </div>
-              <div class="step fail-bg" title="AFTER">
-                <span>parallelTest.hooks.tearDown(io.cucumber.java.Scenario)</span>
-      <div>
-        <textarea disabled class="code-block">java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "this.driver" is null
-	at parallelTest.hooks.tearDown(hooks.java:75)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:703)
+	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:532)
+	at parallelTest.hooks.quitBrowser(hooks.java:72)
 </textarea>
       
       </div>
@@ -388,65 +342,94 @@ remote stacktrace: Backtrace:
               <div class="step fail-bg" title="BEFORE">
                 <span>parallelTest.hooks.setUpBrowser()</span>
       <div>
-        <textarea disabled class="code-block">org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 114
-Current browser version is 119.0.6045.160 with binary path C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+        <textarea disabled class="code-block">org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
 Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'LAPTOP-MHS7RQK4', ip: '172.20.112.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
-Driver info: driver.version: ChromeDriver
-remote stacktrace: Backtrace:
-	GetHandleVerifier [0x0052A813+48355]
-	(No symbol) [0x004BC4B1]
-	(No symbol) [0x003C5358]
-	(No symbol) [0x003E61AC]
-	(No symbol) [0x003E1EF3]
-	(No symbol) [0x003E0579]
-	(No symbol) [0x00410C55]
-	(No symbol) [0x0041093C]
-	(No symbol) [0x0040A536]
-	(No symbol) [0x003E82DC]
-	(No symbol) [0x003E93DD]
-	GetHandleVerifier [0x0078AABD+2539405]
-	GetHandleVerifier [0x007CA78F+2800735]
-	GetHandleVerifier [0x007C456C+2775612]
-	GetHandleVerifier [0x005B51E0+616112]
-	(No symbol) [0x004C5F8C]
-	(No symbol) [0x004C2328]
-	(No symbol) [0x004C240B]
-	(No symbol) [0x004B4FF7]
-	BaseThreadInitThunk [0x75DBFCC9+25]
-	RtlGetAppContainerNamedObjectPath [0x778A7C6E+286]
-	RtlGetAppContainerNamedObjectPath [0x778A7C3E+238]
-
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$new$0(W3CHandshakeResponse.java:57)
-	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$getResponseFunction$2(W3CHandshakeResponse.java:104)
-	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$24(ProtocolHandshake.java:359)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
-	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
-	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:362)
+System info: host: 'LAPTOP-MHS7RQK4', ip: '192.168.99.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:667)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:255)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:138)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:175)
+	at com.plan.Utils.helper.setupRemoteDriver(helper.java:78)
+	at parallelTest.hooks.setUpBrowser(hooks.java:48)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:4444 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:359)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:381)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:139)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:87)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:337)
 	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
 	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:255)
 	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
 	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:138)
-	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:178)
-	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:167)
-	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:156)
-	at com.plan.Utils.helper.setUpDriver(helper.java:47)
-	at parallelTest.hooks.setUpBrowser(hooks.java:40)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:175)
+	at com.plan.Utils.helper.setupRemoteDriver(helper.java:78)
+	at parallelTest.hooks.setUpBrowser(hooks.java:48)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:59)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:64)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:98)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:71)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$0(TestNGCucumberRunner.java:116)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:117)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:113)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:31)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 65 more
 </textarea>
       
       </div>
@@ -465,7 +448,177 @@ remote stacktrace: Backtrace:
                 <span>parallelTest.hooks.tearDown(io.cucumber.java.Scenario)</span>
       <div>
         <textarea disabled class="code-block">java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "this.driver" is null
-	at parallelTest.hooks.tearDown(hooks.java:75)
+	at parallelTest.hooks.tearDown(hooks.java:84)
+</textarea>
+      
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="15"><span class="badge log fail-bg mr-2">Fail</span>Title of your scenario</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="parallelTest.FirstPageSteps.loginTests()">
+                <span>Given User is on FirstPage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="AFTER">
+                <span>parallelTest.hooks.quitBrowser()</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchSessionException: Unable to execute request for an existing session: Unable to find session with ID: fa55d1b741520c6035db36c947279c36
+Build info: version: '4.9.1', revision: 'eb2032df7f'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.10.16.3-microsoft-standard-WSL2', java.version: '11.0.18'
+Driver info: driver.version: unknown
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'LAPTOP-MHS7RQK4', ip: '192.168.99.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{se:cdpVersion=116.0.1938.1, timeouts={implicit=0, pageLoad=300000, script=30000}, platform=LINUX, se:vncLocalAddress=ws://172.22.0.4:7900, webauthn:extension:credBlob=true, acceptInsecureCerts=false, browserVersion=116.0.1938.1, fedcm:accounts=true, browserName=msedge, javascriptEnabled=true, platformName=LINUX, ms:edgeOptions={debuggerAddress=:-1}, se:vncEnabled=true, setWindowRect=true, webauthn:extension:largeBlob=true, networkConnectionEnabled=false, msedge={msedgedriverVersion=116.0.1938.1 (4c25e72a604a391602ad589eb129109151f6b5f9), userDataDir=/tmp/.com.microsoft.Edge.TQypZb}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, se:vnc=ws://172.22.0.4:4444/session/fa55d1b741520c6035db36c947279c36/se/vnc, se:cdp=ws://172.22.0.4:4444/session/fa55d1b741520c6035db36c947279c36/se/cdp, se:bidiEnabled=false, proxy=Proxy(), webauthn:extension:minPinLength=true, webauthn:extension:prf=true, webauthn:virtualAuthenticators=true}]
+Session ID: fa55d1b741520c6035db36c947279c36
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:703)
+	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:532)
+	at parallelTest.hooks.quitBrowser(hooks.java:72)
+</textarea>
+      
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="21"><span class="badge log fail-bg mr-2">Fail</span>Title of your scenario</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="BEFORE">
+                <span>parallelTest.hooks.setUpBrowser()</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
+Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
+System info: host: 'LAPTOP-MHS7RQK4', ip: '192.168.99.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:667)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:255)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:138)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:175)
+	at com.plan.Utils.helper.setupRemoteDriver(helper.java:83)
+	at parallelTest.hooks.setUpBrowser(hooks.java:48)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:4444 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:359)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:381)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:139)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:87)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:337)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:255)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:138)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:175)
+	at com.plan.Utils.helper.setupRemoteDriver(helper.java:83)
+	at parallelTest.hooks.setUpBrowser(hooks.java:48)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:59)
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:64)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:98)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:71)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$0(TestNGCucumberRunner.java:116)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:117)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:113)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:31)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 65 more
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallelTest.LoginPageSteps.loginTest()">
+                <span>Given User is on Loginpage</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="parallelTest.LoginPageSteps.clickAbout()">
+                <span>Then Click on About</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step fail-bg" title="AFTER">
+                <span>parallelTest.hooks.tearDown(io.cucumber.java.Scenario)</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "this.driver" is null
+	at parallelTest.hooks.tearDown(hooks.java:84)
 </textarea>
       
       </div>
@@ -496,15 +649,15 @@ remote stacktrace: Backtrace:
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log badge-danger'>2</span>
+<span class='badge log badge-danger'>4</span>
 </span>
 <p class="name">@tag1</p>
-<p class="duration text-sm">2 tests</p>
+<p class="duration text-sm">4 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
 <h4>@tag1</h4>
-<span status="fail" class='badge log badge-danger'>2 failed</span>
+<span status="fail" class='badge log badge-danger'>4 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -517,7 +670,7 @@ remote stacktrace: Backtrace:
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>20:18:19 PM</td>
+<td>23:17:05 PM</td>
 <td>
 <a href="#" class="linked" test-id='1' id='2'>Title of your scenario</a>
 <div class="">
@@ -527,9 +680,29 @@ remote stacktrace: Backtrace:
 </tr>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>20:18:28 PM</td>
+<td>23:17:38 PM</td>
 <td>
 <a href="#" class="linked" test-id='1' id='8'>Title of your scenario</a>
+<div class="">
+<span class="badge badge-default">Title of your feature.Title of your scenario</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:18:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='15'>Title of your scenario</a>
+<div class="">
+<span class="badge badge-default">Title of your feature.Title of your scenario</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:18:29 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='21'>Title of your scenario</a>
 <div class="">
 <span class="badge badge-default">Title of your feature.Title of your scenario</span>
 </div>
@@ -551,7 +724,7 @@ remote stacktrace: Backtrace:
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">3</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
@@ -560,12 +733,12 @@ remote stacktrace: Backtrace:
 <span class="meta">
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">org.openqa.selenium.SessionNotCreatedException</p>
+<p class="name">org.openqa.selenium.remote.UnreachableBrowserException</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>org.openqa.selenium.SessionNotCreatedException</h4>
+<h4>org.openqa.selenium.remote.UnreachableBrowserException</h4>
 <span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -579,9 +752,9 @@ remote stacktrace: Backtrace:
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>20:18:19 PM</td>
+<td>23:17:38 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='4'>parallelTest.hooks.setUpBrowser()</a>
+<a href="#" class="linked" test-id='1' id='10'>parallelTest.hooks.setUpBrowser()</a>
 <div class="">
 <span class="badge badge-default">Title of your feature.Title of your scenario.parallelTest.hooks.setUpBrowser()</span>
 </div>
@@ -589,9 +762,9 @@ remote stacktrace: Backtrace:
 </tr>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>20:18:28 PM</td>
+<td>23:18:29 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='10'>parallelTest.hooks.setUpBrowser()</a>
+<a href="#" class="linked" test-id='1' id='23'>parallelTest.hooks.setUpBrowser()</a>
 <div class="">
 <span class="badge badge-default">Title of your feature.Title of your scenario.parallelTest.hooks.setUpBrowser()</span>
 </div>
@@ -625,9 +798,9 @@ remote stacktrace: Backtrace:
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>20:18:27 PM</td>
+<td>23:17:53 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='6'>parallelTest.hooks.tearDown(io.cucumber.java.Scenario)</a>
+<a href="#" class="linked" test-id='1' id='13'>parallelTest.hooks.tearDown(io.cucumber.java.Scenario)</a>
 <div class="">
 <span class="badge badge-default">Title of your feature.Title of your scenario.parallelTest.hooks.tearDown(io.cucumber.java.Scenario)</span>
 </div>
@@ -635,11 +808,57 @@ remote stacktrace: Backtrace:
 </tr>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>20:18:28 PM</td>
+<td>23:18:45 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='13'>parallelTest.hooks.tearDown(io.cucumber.java.Scenario)</a>
+<a href="#" class="linked" test-id='1' id='26'>parallelTest.hooks.tearDown(io.cucumber.java.Scenario)</a>
 <div class="">
 <span class="badge badge-default">Title of your feature.Title of your scenario.parallelTest.hooks.tearDown(io.cucumber.java.Scenario)</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.NoSuchSessionException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.NoSuchSessionException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:17:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='7'>parallelTest.hooks.quitBrowser()</a>
+<div class="">
+<span class="badge badge-default">Title of your feature.Title of your scenario.parallelTest.hooks.quitBrowser()</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:18:24 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='20'>parallelTest.hooks.quitBrowser()</a>
+<div class="">
+<span class="badge badge-default">Title of your feature.Title of your scenario.parallelTest.hooks.quitBrowser()</span>
 </div>
 </td>
 </tr>

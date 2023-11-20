@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite thread-count="2" name="Failed suite [CrossbrowserParallelSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" name="FirefoxTest(failed)">
+    <parameter name="Browser" value="firefox"/>
     <classes>
-      <class name="parallelTest.cucumberRunner">
+      <class name="parallelTest.crossBrowserRunner">
         <methods>
           <include name="runScenario" invocation-numbers="0 1"/>
           <include name="tearDownClass"/>
+          <include name="defineBrowser"/>
           <include name="setUpClass"/>
         </methods>
-      </class> <!-- parallelTest.cucumberRunner -->
+      </class> <!-- parallelTest.crossBrowserRunner -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- FirefoxTest(failed) -->
+  <test thread-count="2" name="EdgeTest(failed)">
+    <parameter name="Browser" value="edge"/>
+    <classes>
+      <class name="parallelTest.crossBrowserRunner">
+        <methods>
+          <include name="runScenario" invocation-numbers="0 1"/>
+          <include name="tearDownClass"/>
+          <include name="defineBrowser"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- parallelTest.crossBrowserRunner -->
+    </classes>
+  </test> <!-- EdgeTest(failed) -->
+</suite> <!-- Failed suite [CrossbrowserParallelSuite] -->
