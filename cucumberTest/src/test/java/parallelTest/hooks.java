@@ -41,7 +41,8 @@ public class hooks {
 		} else if (prop.getProperty("TESTING").equalsIgnoreCase("desktop")) {
 			driver1 = helper.desktopApp();
 		} else if (prop.getProperty("TESTING").equalsIgnoreCase("remote")) {
-			String browser= crossBrowserRunner.BROWSER.get();
+			//String browser= crossBrowserRunner.BROWSER.get();
+			String browser = prop.getProperty("BROWSER");
 			driver = hl.setupRemoteDriver(browser);
 		}else if (prop.getProperty("TESTING").equalsIgnoreCase("crossbrowser")) {
 //			String browser= crossBrowserRunner.BROWSER.get();

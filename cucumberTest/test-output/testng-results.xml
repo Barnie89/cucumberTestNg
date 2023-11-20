@@ -1,33 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="0" failed="6" skipped="0">
+<testng-results ignored="0" total="2" passed="0" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-30T18:50:57Z" name="CrossbrowserParallelSuite" finished-at="2023-06-30T18:51:06Z" duration-ms="9222">
+  <suite started-at="2023-11-20T14:48:18Z" name="Default suite" finished-at="2023-11-20T14:48:32Z" duration-ms="13873">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelTest.crossBrowserRunner@63798ca7]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelTest.crossBrowserRunner@3da05287]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelTest.crossBrowserRunner@75f95314]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelTest.cucumberRunner@517566b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-06-30T18:50:57Z" name="FirefoxTest" finished-at="2023-06-30T18:51:05Z" duration-ms="7609">
-      <class name="parallelTest.crossBrowserRunner">
-        <test-method is-config="true" signature="defineBrowser(java.lang.String)[pri:0, instance:parallelTest.crossBrowserRunner@3da05287]" started-at="2023-06-30T18:50:57Z" name="defineBrowser" finished-at="2023-06-30T18:50:57Z" duration-ms="19" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[firefox]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- defineBrowser -->
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:parallelTest.crossBrowserRunner@3da05287]" started-at="2023-06-30T18:50:57Z" name="setUpClass" finished-at="2023-06-30T18:50:58Z" duration-ms="1316" status="PASS">
+    <test started-at="2023-11-20T14:48:18Z" name="Default test" finished-at="2023-11-20T14:48:32Z" duration-ms="13873">
+      <class name="parallelTest.cucumberRunner">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:parallelTest.cucumberRunner@517566b]" started-at="2023-11-20T14:48:18Z" name="setUpClass" finished-at="2023-11-20T14:48:19Z" duration-ms="1015" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelTest.crossBrowserRunner@3da05287]" started-at="2023-06-30T18:50:58Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-30T18:51:00Z" duration-ms="1535" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelTest.cucumberRunner@517566b]" started-at="2023-11-20T14:48:19Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-20T14:48:27Z" duration-ms="8673" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -40,101 +27,67 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.WebDriverException">
+          <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
-              <![CDATA[First match w3c capabilities is zero length
+              <![CDATA[session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 119.0.6045.160 with binary path C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
 Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'LAPTOP-MHS7RQK4', ip: '192.168.99.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
-Driver info: driver.version: RemoteWebDriver
-remote stacktrace: java.lang.IllegalArgumentException: First match w3c capabilities is zero length
-at org.openqa.selenium.remote.NewSessionPayload.validate(NewSessionPayload.java:143)
-at org.openqa.selenium.remote.NewSessionPayload.<init>(NewSessionPayload.java:91)
-at org.openqa.selenium.remote.NewSessionPayload.create(NewSessionPayload.java:128)
-at org.openqa.selenium.grid.data.SessionRequest.<init>(SessionRequest.java:65)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.lambda$new$0(NewSessionQueue.java:66)
-at org.openqa.selenium.remote.http.Route$TemplatizedRoute.handle(Route.java:192)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.execute(NewSessionQueue.java:122)
-at org.openqa.selenium.remote.tracing.SpanWrappedHttpHandler.execute(SpanWrappedHttpHandler.java:86)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.router.Router.execute(Router.java:91)
-at org.openqa.selenium.grid.web.EnsureSpecCompliantResponseHeaders.lambda$apply$0(EnsureSpecCompliantResponseHeaders.java:34)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$NestedRoute.handle(Route.java:270)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.AddWebDriverSpecHeaders.lambda$apply$0(AddWebDriverSpecHeaders.java:35)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.netty.server.SeleniumHandler.lambda$channelRead0$0(SeleniumHandler.java:44)
-at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
+System info: host: 'LAPTOP-MHS7RQK4', ip: '172.20.112.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+GetHandleVerifier [0x0052A813+48355]
+(No symbol) [0x004BC4B1]
+(No symbol) [0x003C5358]
+(No symbol) [0x003E61AC]
+(No symbol) [0x003E1EF3]
+(No symbol) [0x003E0579]
+(No symbol) [0x00410C55]
+(No symbol) [0x0041093C]
+(No symbol) [0x0040A536]
+(No symbol) [0x003E82DC]
+(No symbol) [0x003E93DD]
+GetHandleVerifier [0x0078AABD+2539405]
+GetHandleVerifier [0x007CA78F+2800735]
+GetHandleVerifier [0x007C456C+2775612]
+GetHandleVerifier [0x005B51E0+616112]
+(No symbol) [0x004C5F8C]
+(No symbol) [0x004C2328]
+(No symbol) [0x004C240B]
+(No symbol) [0x004B4FF7]
+BaseThreadInitThunk [0x75DBFCC9+25]
+RtlGetAppContainerNamedObjectPath [0x778A7C6E+286]
+RtlGetAppContainerNamedObjectPath [0x778A7C3E+238]
 ]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: First match w3c capabilities is zero length
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 119.0.6045.160 with binary path C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
 Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'LAPTOP-MHS7RQK4', ip: '192.168.99.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
-Driver info: driver.version: RemoteWebDriver
-remote stacktrace: java.lang.IllegalArgumentException: First match w3c capabilities is zero length
-at org.openqa.selenium.remote.NewSessionPayload.validate(NewSessionPayload.java:143)
-at org.openqa.selenium.remote.NewSessionPayload.<init>(NewSessionPayload.java:91)
-at org.openqa.selenium.remote.NewSessionPayload.create(NewSessionPayload.java:128)
-at org.openqa.selenium.grid.data.SessionRequest.<init>(SessionRequest.java:65)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.lambda$new$0(NewSessionQueue.java:66)
-at org.openqa.selenium.remote.http.Route$TemplatizedRoute.handle(Route.java:192)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.execute(NewSessionQueue.java:122)
-at org.openqa.selenium.remote.tracing.SpanWrappedHttpHandler.execute(SpanWrappedHttpHandler.java:86)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.router.Router.execute(Router.java:91)
-at org.openqa.selenium.grid.web.EnsureSpecCompliantResponseHeaders.lambda$apply$0(EnsureSpecCompliantResponseHeaders.java:34)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$NestedRoute.handle(Route.java:270)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.AddWebDriverSpecHeaders.lambda$apply$0(AddWebDriverSpecHeaders.java:35)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.netty.server.SeleniumHandler.lambda$channelRead0$0(SeleniumHandler.java:44)
-at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
+System info: host: 'LAPTOP-MHS7RQK4', ip: '172.20.112.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+GetHandleVerifier [0x0052A813+48355]
+(No symbol) [0x004BC4B1]
+(No symbol) [0x003C5358]
+(No symbol) [0x003E61AC]
+(No symbol) [0x003E1EF3]
+(No symbol) [0x003E0579]
+(No symbol) [0x00410C55]
+(No symbol) [0x0041093C]
+(No symbol) [0x0040A536]
+(No symbol) [0x003E82DC]
+(No symbol) [0x003E93DD]
+GetHandleVerifier [0x0078AABD+2539405]
+GetHandleVerifier [0x007CA78F+2800735]
+GetHandleVerifier [0x007C456C+2775612]
+GetHandleVerifier [0x005B51E0+616112]
+(No symbol) [0x004C5F8C]
+(No symbol) [0x004C2328]
+(No symbol) [0x004C240B]
+(No symbol) [0x004B4FF7]
+BaseThreadInitThunk [0x75DBFCC9+25]
+RtlGetAppContainerNamedObjectPath [0x778A7C6E+286]
+RtlGetAppContainerNamedObjectPath [0x778A7C3E+238]
 
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
@@ -156,20 +109,23 @@ at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java
 at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:362)
 at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
 at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:255)
 at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
 at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:138)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:175)
-at com.plan.Utils.helper.setupRemoteDriver(helper.java:78)
-at parallelTest.hooks.setUpBrowser(hooks.java:45)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:178)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:167)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:156)
+at com.plan.Utils.helper.setUpDriver(helper.java:47)
+at parallelTest.hooks.setUpBrowser(hooks.java:40)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelTest.crossBrowserRunner@3da05287]" started-at="2023-06-30T18:51:00Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-30T18:51:00Z" duration-ms="77" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelTest.cucumberRunner@517566b]" started-at="2023-11-20T14:48:27Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-20T14:48:28Z" duration-ms="951" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -182,101 +138,67 @@ at parallelTest.hooks.setUpBrowser(hooks.java:45)
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.WebDriverException">
+          <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
-              <![CDATA[First match w3c capabilities is zero length
+              <![CDATA[session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 119.0.6045.160 with binary path C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
 Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'LAPTOP-MHS7RQK4', ip: '192.168.99.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
-Driver info: driver.version: RemoteWebDriver
-remote stacktrace: java.lang.IllegalArgumentException: First match w3c capabilities is zero length
-at org.openqa.selenium.remote.NewSessionPayload.validate(NewSessionPayload.java:143)
-at org.openqa.selenium.remote.NewSessionPayload.<init>(NewSessionPayload.java:91)
-at org.openqa.selenium.remote.NewSessionPayload.create(NewSessionPayload.java:128)
-at org.openqa.selenium.grid.data.SessionRequest.<init>(SessionRequest.java:65)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.lambda$new$0(NewSessionQueue.java:66)
-at org.openqa.selenium.remote.http.Route$TemplatizedRoute.handle(Route.java:192)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.execute(NewSessionQueue.java:122)
-at org.openqa.selenium.remote.tracing.SpanWrappedHttpHandler.execute(SpanWrappedHttpHandler.java:86)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.router.Router.execute(Router.java:91)
-at org.openqa.selenium.grid.web.EnsureSpecCompliantResponseHeaders.lambda$apply$0(EnsureSpecCompliantResponseHeaders.java:34)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$NestedRoute.handle(Route.java:270)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.AddWebDriverSpecHeaders.lambda$apply$0(AddWebDriverSpecHeaders.java:35)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.netty.server.SeleniumHandler.lambda$channelRead0$0(SeleniumHandler.java:44)
-at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
+System info: host: 'LAPTOP-MHS7RQK4', ip: '172.20.112.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+GetHandleVerifier [0x0052A813+48355]
+(No symbol) [0x004BC4B1]
+(No symbol) [0x003C5358]
+(No symbol) [0x003E61AC]
+(No symbol) [0x003E1EF3]
+(No symbol) [0x003E0579]
+(No symbol) [0x00410C55]
+(No symbol) [0x0041093C]
+(No symbol) [0x0040A536]
+(No symbol) [0x003E82DC]
+(No symbol) [0x003E93DD]
+GetHandleVerifier [0x0078AABD+2539405]
+GetHandleVerifier [0x007CA78F+2800735]
+GetHandleVerifier [0x007C456C+2775612]
+GetHandleVerifier [0x005B51E0+616112]
+(No symbol) [0x004C5F8C]
+(No symbol) [0x004C2328]
+(No symbol) [0x004C240B]
+(No symbol) [0x004B4FF7]
+BaseThreadInitThunk [0x75DBFCC9+25]
+RtlGetAppContainerNamedObjectPath [0x778A7C6E+286]
+RtlGetAppContainerNamedObjectPath [0x778A7C3E+238]
 ]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: First match w3c capabilities is zero length
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 119.0.6045.160 with binary path C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
 Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'LAPTOP-MHS7RQK4', ip: '192.168.99.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
-Driver info: driver.version: RemoteWebDriver
-remote stacktrace: java.lang.IllegalArgumentException: First match w3c capabilities is zero length
-at org.openqa.selenium.remote.NewSessionPayload.validate(NewSessionPayload.java:143)
-at org.openqa.selenium.remote.NewSessionPayload.<init>(NewSessionPayload.java:91)
-at org.openqa.selenium.remote.NewSessionPayload.create(NewSessionPayload.java:128)
-at org.openqa.selenium.grid.data.SessionRequest.<init>(SessionRequest.java:65)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.lambda$new$0(NewSessionQueue.java:66)
-at org.openqa.selenium.remote.http.Route$TemplatizedRoute.handle(Route.java:192)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.execute(NewSessionQueue.java:122)
-at org.openqa.selenium.remote.tracing.SpanWrappedHttpHandler.execute(SpanWrappedHttpHandler.java:86)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.router.Router.execute(Router.java:91)
-at org.openqa.selenium.grid.web.EnsureSpecCompliantResponseHeaders.lambda$apply$0(EnsureSpecCompliantResponseHeaders.java:34)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$NestedRoute.handle(Route.java:270)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.AddWebDriverSpecHeaders.lambda$apply$0(AddWebDriverSpecHeaders.java:35)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.netty.server.SeleniumHandler.lambda$channelRead0$0(SeleniumHandler.java:44)
-at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
+System info: host: 'LAPTOP-MHS7RQK4', ip: '172.20.112.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+GetHandleVerifier [0x0052A813+48355]
+(No symbol) [0x004BC4B1]
+(No symbol) [0x003C5358]
+(No symbol) [0x003E61AC]
+(No symbol) [0x003E1EF3]
+(No symbol) [0x003E0579]
+(No symbol) [0x00410C55]
+(No symbol) [0x0041093C]
+(No symbol) [0x0040A536]
+(No symbol) [0x003E82DC]
+(No symbol) [0x003E93DD]
+GetHandleVerifier [0x0078AABD+2539405]
+GetHandleVerifier [0x007CA78F+2800735]
+GetHandleVerifier [0x007C456C+2775612]
+GetHandleVerifier [0x005B51E0+616112]
+(No symbol) [0x004C5F8C]
+(No symbol) [0x004C2328]
+(No symbol) [0x004C240B]
+(No symbol) [0x004B4FF7]
+BaseThreadInitThunk [0x75DBFCC9+25]
+RtlGetAppContainerNamedObjectPath [0x778A7C6E+286]
+RtlGetAppContainerNamedObjectPath [0x778A7C3E+238]
 
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
@@ -298,638 +220,27 @@ at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java
 at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:362)
 at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
 at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:255)
 at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
 at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:138)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:175)
-at com.plan.Utils.helper.setupRemoteDriver(helper.java:78)
-at parallelTest.hooks.setUpBrowser(hooks.java:45)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:178)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:167)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:156)
+at com.plan.Utils.helper.setUpDriver(helper.java:47)
+at parallelTest.hooks.setUpBrowser(hooks.java:40)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:parallelTest.crossBrowserRunner@3da05287]" started-at="2023-06-30T18:51:00Z" name="tearDownClass" finished-at="2023-06-30T18:51:05Z" duration-ms="4625" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:parallelTest.cucumberRunner@517566b]" started-at="2023-11-20T14:48:28Z" name="tearDownClass" finished-at="2023-11-20T14:48:32Z" duration-ms="3204" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- parallelTest.crossBrowserRunner -->
-    </test> <!-- FirefoxTest -->
-    <test started-at="2023-06-30T18:50:57Z" name="ChromeTest" finished-at="2023-06-30T18:51:05Z" duration-ms="8097">
-      <class name="parallelTest.crossBrowserRunner">
-        <test-method is-config="true" signature="defineBrowser(java.lang.String)[pri:0, instance:parallelTest.crossBrowserRunner@63798ca7]" started-at="2023-06-30T18:50:57Z" name="defineBrowser" finished-at="2023-06-30T18:50:57Z" duration-ms="19" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- defineBrowser -->
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:parallelTest.crossBrowserRunner@63798ca7]" started-at="2023-06-30T18:50:57Z" name="setUpClass" finished-at="2023-06-30T18:50:58Z" duration-ms="1312" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelTest.crossBrowserRunner@63798ca7]" started-at="2023-06-30T18:50:58Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-30T18:51:00Z" duration-ms="1534" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Title of your scenario"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Title of your feature]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[First match w3c capabilities is zero length
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'LAPTOP-MHS7RQK4', ip: '192.168.99.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
-Driver info: driver.version: RemoteWebDriver
-remote stacktrace: java.lang.IllegalArgumentException: First match w3c capabilities is zero length
-at org.openqa.selenium.remote.NewSessionPayload.validate(NewSessionPayload.java:143)
-at org.openqa.selenium.remote.NewSessionPayload.<init>(NewSessionPayload.java:91)
-at org.openqa.selenium.remote.NewSessionPayload.create(NewSessionPayload.java:128)
-at org.openqa.selenium.grid.data.SessionRequest.<init>(SessionRequest.java:65)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.lambda$new$0(NewSessionQueue.java:66)
-at org.openqa.selenium.remote.http.Route$TemplatizedRoute.handle(Route.java:192)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.execute(NewSessionQueue.java:122)
-at org.openqa.selenium.remote.tracing.SpanWrappedHttpHandler.execute(SpanWrappedHttpHandler.java:86)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.router.Router.execute(Router.java:91)
-at org.openqa.selenium.grid.web.EnsureSpecCompliantResponseHeaders.lambda$apply$0(EnsureSpecCompliantResponseHeaders.java:34)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$NestedRoute.handle(Route.java:270)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.AddWebDriverSpecHeaders.lambda$apply$0(AddWebDriverSpecHeaders.java:35)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.netty.server.SeleniumHandler.lambda$channelRead0$0(SeleniumHandler.java:44)
-at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
-]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: First match w3c capabilities is zero length
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'LAPTOP-MHS7RQK4', ip: '192.168.99.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
-Driver info: driver.version: RemoteWebDriver
-remote stacktrace: java.lang.IllegalArgumentException: First match w3c capabilities is zero length
-at org.openqa.selenium.remote.NewSessionPayload.validate(NewSessionPayload.java:143)
-at org.openqa.selenium.remote.NewSessionPayload.<init>(NewSessionPayload.java:91)
-at org.openqa.selenium.remote.NewSessionPayload.create(NewSessionPayload.java:128)
-at org.openqa.selenium.grid.data.SessionRequest.<init>(SessionRequest.java:65)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.lambda$new$0(NewSessionQueue.java:66)
-at org.openqa.selenium.remote.http.Route$TemplatizedRoute.handle(Route.java:192)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.execute(NewSessionQueue.java:122)
-at org.openqa.selenium.remote.tracing.SpanWrappedHttpHandler.execute(SpanWrappedHttpHandler.java:86)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.router.Router.execute(Router.java:91)
-at org.openqa.selenium.grid.web.EnsureSpecCompliantResponseHeaders.lambda$apply$0(EnsureSpecCompliantResponseHeaders.java:34)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$NestedRoute.handle(Route.java:270)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.AddWebDriverSpecHeaders.lambda$apply$0(AddWebDriverSpecHeaders.java:35)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.netty.server.SeleniumHandler.lambda$channelRead0$0(SeleniumHandler.java:44)
-at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
-
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$new$0(W3CHandshakeResponse.java:57)
-at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$getResponseFunction$2(W3CHandshakeResponse.java:104)
-at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$24(ProtocolHandshake.java:359)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
-at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
-at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
-at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
-at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
-at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:362)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:255)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:138)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:175)
-at com.plan.Utils.helper.setupRemoteDriver(helper.java:74)
-at parallelTest.hooks.setUpBrowser(hooks.java:45)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelTest.crossBrowserRunner@63798ca7]" started-at="2023-06-30T18:51:00Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-30T18:51:00Z" duration-ms="73" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Title of your scenario"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Title of your feature]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[First match w3c capabilities is zero length
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'LAPTOP-MHS7RQK4', ip: '192.168.99.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
-Driver info: driver.version: RemoteWebDriver
-remote stacktrace: java.lang.IllegalArgumentException: First match w3c capabilities is zero length
-at org.openqa.selenium.remote.NewSessionPayload.validate(NewSessionPayload.java:143)
-at org.openqa.selenium.remote.NewSessionPayload.<init>(NewSessionPayload.java:91)
-at org.openqa.selenium.remote.NewSessionPayload.create(NewSessionPayload.java:128)
-at org.openqa.selenium.grid.data.SessionRequest.<init>(SessionRequest.java:65)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.lambda$new$0(NewSessionQueue.java:66)
-at org.openqa.selenium.remote.http.Route$TemplatizedRoute.handle(Route.java:192)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.execute(NewSessionQueue.java:122)
-at org.openqa.selenium.remote.tracing.SpanWrappedHttpHandler.execute(SpanWrappedHttpHandler.java:86)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.router.Router.execute(Router.java:91)
-at org.openqa.selenium.grid.web.EnsureSpecCompliantResponseHeaders.lambda$apply$0(EnsureSpecCompliantResponseHeaders.java:34)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$NestedRoute.handle(Route.java:270)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.AddWebDriverSpecHeaders.lambda$apply$0(AddWebDriverSpecHeaders.java:35)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.netty.server.SeleniumHandler.lambda$channelRead0$0(SeleniumHandler.java:44)
-at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
-]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: First match w3c capabilities is zero length
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'LAPTOP-MHS7RQK4', ip: '192.168.99.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
-Driver info: driver.version: RemoteWebDriver
-remote stacktrace: java.lang.IllegalArgumentException: First match w3c capabilities is zero length
-at org.openqa.selenium.remote.NewSessionPayload.validate(NewSessionPayload.java:143)
-at org.openqa.selenium.remote.NewSessionPayload.<init>(NewSessionPayload.java:91)
-at org.openqa.selenium.remote.NewSessionPayload.create(NewSessionPayload.java:128)
-at org.openqa.selenium.grid.data.SessionRequest.<init>(SessionRequest.java:65)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.lambda$new$0(NewSessionQueue.java:66)
-at org.openqa.selenium.remote.http.Route$TemplatizedRoute.handle(Route.java:192)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.execute(NewSessionQueue.java:122)
-at org.openqa.selenium.remote.tracing.SpanWrappedHttpHandler.execute(SpanWrappedHttpHandler.java:86)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.router.Router.execute(Router.java:91)
-at org.openqa.selenium.grid.web.EnsureSpecCompliantResponseHeaders.lambda$apply$0(EnsureSpecCompliantResponseHeaders.java:34)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$NestedRoute.handle(Route.java:270)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.AddWebDriverSpecHeaders.lambda$apply$0(AddWebDriverSpecHeaders.java:35)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.netty.server.SeleniumHandler.lambda$channelRead0$0(SeleniumHandler.java:44)
-at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
-
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$new$0(W3CHandshakeResponse.java:57)
-at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$getResponseFunction$2(W3CHandshakeResponse.java:104)
-at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$24(ProtocolHandshake.java:359)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
-at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
-at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
-at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
-at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
-at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:362)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:255)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:138)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:175)
-at com.plan.Utils.helper.setupRemoteDriver(helper.java:74)
-at parallelTest.hooks.setUpBrowser(hooks.java:45)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:parallelTest.crossBrowserRunner@63798ca7]" started-at="2023-06-30T18:51:00Z" name="tearDownClass" finished-at="2023-06-30T18:51:05Z" duration-ms="5115" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- parallelTest.crossBrowserRunner -->
-    </test> <!-- ChromeTest -->
-    <test started-at="2023-06-30T18:51:05Z" name="EdgeTest" finished-at="2023-06-30T18:51:06Z" duration-ms="1566">
-      <class name="parallelTest.crossBrowserRunner">
-        <test-method is-config="true" signature="defineBrowser(java.lang.String)[pri:0, instance:parallelTest.crossBrowserRunner@75f95314]" started-at="2023-06-30T18:51:05Z" name="defineBrowser" finished-at="2023-06-30T18:51:05Z" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[edge]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- defineBrowser -->
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:parallelTest.crossBrowserRunner@75f95314]" started-at="2023-06-30T18:51:05Z" name="setUpClass" finished-at="2023-06-30T18:51:05Z" duration-ms="41" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelTest.crossBrowserRunner@75f95314]" started-at="2023-06-30T18:51:05Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-30T18:51:05Z" duration-ms="93" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Title of your scenario"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Title of your feature]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[First match w3c capabilities is zero length
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'LAPTOP-MHS7RQK4', ip: '192.168.99.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
-Driver info: driver.version: RemoteWebDriver
-remote stacktrace: java.lang.IllegalArgumentException: First match w3c capabilities is zero length
-at org.openqa.selenium.remote.NewSessionPayload.validate(NewSessionPayload.java:143)
-at org.openqa.selenium.remote.NewSessionPayload.<init>(NewSessionPayload.java:91)
-at org.openqa.selenium.remote.NewSessionPayload.create(NewSessionPayload.java:128)
-at org.openqa.selenium.grid.data.SessionRequest.<init>(SessionRequest.java:65)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.lambda$new$0(NewSessionQueue.java:66)
-at org.openqa.selenium.remote.http.Route$TemplatizedRoute.handle(Route.java:192)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.execute(NewSessionQueue.java:122)
-at org.openqa.selenium.remote.tracing.SpanWrappedHttpHandler.execute(SpanWrappedHttpHandler.java:86)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.router.Router.execute(Router.java:91)
-at org.openqa.selenium.grid.web.EnsureSpecCompliantResponseHeaders.lambda$apply$0(EnsureSpecCompliantResponseHeaders.java:34)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$NestedRoute.handle(Route.java:270)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.AddWebDriverSpecHeaders.lambda$apply$0(AddWebDriverSpecHeaders.java:35)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.netty.server.SeleniumHandler.lambda$channelRead0$0(SeleniumHandler.java:44)
-at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
-]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: First match w3c capabilities is zero length
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'LAPTOP-MHS7RQK4', ip: '192.168.99.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
-Driver info: driver.version: RemoteWebDriver
-remote stacktrace: java.lang.IllegalArgumentException: First match w3c capabilities is zero length
-at org.openqa.selenium.remote.NewSessionPayload.validate(NewSessionPayload.java:143)
-at org.openqa.selenium.remote.NewSessionPayload.<init>(NewSessionPayload.java:91)
-at org.openqa.selenium.remote.NewSessionPayload.create(NewSessionPayload.java:128)
-at org.openqa.selenium.grid.data.SessionRequest.<init>(SessionRequest.java:65)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.lambda$new$0(NewSessionQueue.java:66)
-at org.openqa.selenium.remote.http.Route$TemplatizedRoute.handle(Route.java:192)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.execute(NewSessionQueue.java:122)
-at org.openqa.selenium.remote.tracing.SpanWrappedHttpHandler.execute(SpanWrappedHttpHandler.java:86)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.router.Router.execute(Router.java:91)
-at org.openqa.selenium.grid.web.EnsureSpecCompliantResponseHeaders.lambda$apply$0(EnsureSpecCompliantResponseHeaders.java:34)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$NestedRoute.handle(Route.java:270)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.AddWebDriverSpecHeaders.lambda$apply$0(AddWebDriverSpecHeaders.java:35)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.netty.server.SeleniumHandler.lambda$channelRead0$0(SeleniumHandler.java:44)
-at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
-
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$new$0(W3CHandshakeResponse.java:57)
-at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$getResponseFunction$2(W3CHandshakeResponse.java:104)
-at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$24(ProtocolHandshake.java:359)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
-at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
-at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
-at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
-at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
-at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:362)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:255)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:138)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:175)
-at com.plan.Utils.helper.setupRemoteDriver(helper.java:83)
-at parallelTest.hooks.setUpBrowser(hooks.java:45)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:parallelTest.crossBrowserRunner@75f95314]" started-at="2023-06-30T18:51:05Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-30T18:51:05Z" duration-ms="64" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Title of your scenario"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Title of your feature]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[First match w3c capabilities is zero length
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'LAPTOP-MHS7RQK4', ip: '192.168.99.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
-Driver info: driver.version: RemoteWebDriver
-remote stacktrace: java.lang.IllegalArgumentException: First match w3c capabilities is zero length
-at org.openqa.selenium.remote.NewSessionPayload.validate(NewSessionPayload.java:143)
-at org.openqa.selenium.remote.NewSessionPayload.<init>(NewSessionPayload.java:91)
-at org.openqa.selenium.remote.NewSessionPayload.create(NewSessionPayload.java:128)
-at org.openqa.selenium.grid.data.SessionRequest.<init>(SessionRequest.java:65)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.lambda$new$0(NewSessionQueue.java:66)
-at org.openqa.selenium.remote.http.Route$TemplatizedRoute.handle(Route.java:192)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.execute(NewSessionQueue.java:122)
-at org.openqa.selenium.remote.tracing.SpanWrappedHttpHandler.execute(SpanWrappedHttpHandler.java:86)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.router.Router.execute(Router.java:91)
-at org.openqa.selenium.grid.web.EnsureSpecCompliantResponseHeaders.lambda$apply$0(EnsureSpecCompliantResponseHeaders.java:34)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$NestedRoute.handle(Route.java:270)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.AddWebDriverSpecHeaders.lambda$apply$0(AddWebDriverSpecHeaders.java:35)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.netty.server.SeleniumHandler.lambda$channelRead0$0(SeleniumHandler.java:44)
-at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
-]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: First match w3c capabilities is zero length
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'LAPTOP-MHS7RQK4', ip: '192.168.99.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
-Driver info: driver.version: RemoteWebDriver
-remote stacktrace: java.lang.IllegalArgumentException: First match w3c capabilities is zero length
-at org.openqa.selenium.remote.NewSessionPayload.validate(NewSessionPayload.java:143)
-at org.openqa.selenium.remote.NewSessionPayload.<init>(NewSessionPayload.java:91)
-at org.openqa.selenium.remote.NewSessionPayload.create(NewSessionPayload.java:128)
-at org.openqa.selenium.grid.data.SessionRequest.<init>(SessionRequest.java:65)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.lambda$new$0(NewSessionQueue.java:66)
-at org.openqa.selenium.remote.http.Route$TemplatizedRoute.handle(Route.java:192)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.sessionqueue.NewSessionQueue.execute(NewSessionQueue.java:122)
-at org.openqa.selenium.remote.tracing.SpanWrappedHttpHandler.execute(SpanWrappedHttpHandler.java:86)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.grid.router.Router.execute(Router.java:91)
-at org.openqa.selenium.grid.web.EnsureSpecCompliantResponseHeaders.lambda$apply$0(EnsureSpecCompliantResponseHeaders.java:34)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$NestedRoute.handle(Route.java:270)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.http.Route$CombinedRoute.handle(Route.java:336)
-at org.openqa.selenium.remote.http.Route.execute(Route.java:68)
-at org.openqa.selenium.remote.AddWebDriverSpecHeaders.lambda$apply$0(AddWebDriverSpecHeaders.java:35)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.remote.ErrorFilter.lambda$apply$0(ErrorFilter.java:44)
-at org.openqa.selenium.remote.http.Filter$1.execute(Filter.java:64)
-at org.openqa.selenium.netty.server.SeleniumHandler.lambda$channelRead0$0(SeleniumHandler.java:44)
-at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-at java.base/java.lang.Thread.run(Thread.java:829)
-
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$new$0(W3CHandshakeResponse.java:57)
-at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$getResponseFunction$2(W3CHandshakeResponse.java:104)
-at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$24(ProtocolHandshake.java:359)
-at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
-at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
-at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
-at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
-at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
-at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:362)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:255)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:138)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:175)
-at com.plan.Utils.helper.setupRemoteDriver(helper.java:83)
-at parallelTest.hooks.setUpBrowser(hooks.java:45)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:parallelTest.crossBrowserRunner@75f95314]" started-at="2023-06-30T18:51:05Z" name="tearDownClass" finished-at="2023-06-30T18:51:06Z" duration-ms="1361" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- parallelTest.crossBrowserRunner -->
-    </test> <!-- EdgeTest -->
-  </suite> <!-- CrossbrowserParallelSuite -->
+      </class> <!-- parallelTest.cucumberRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
